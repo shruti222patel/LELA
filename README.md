@@ -18,9 +18,7 @@ Key Terms:
 * Install Vagrant Plugin - Hostupdater
 	* `vagrant plugin install vagrant-hostsupdater`
 
-* Install [MySQL Workbench](http://dev.mysql.com/downloads/workbench/)
-
-
+* Install [MySQL Pro](http://www.sequelpro.com/)[MySQL Workbench](http://dev.mysql.com/downloads/workbench/)
 	
 * Install Composer & php55
 	* If you have a Mac
