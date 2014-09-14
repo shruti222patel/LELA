@@ -38,22 +38,9 @@ Key Terms:
  
 * Go into the root directory (`cd LELA`) & execute the start.sh file (`sh start.sh`)
 
-* Type 'mission.lela.mil' into your browser & the password will be revealed :)
-
-(:if false:)
-here is some
-text
-(:searchbox:)
-with other directives
-(:ifend:)
+* Type 'mission.lela.mil' into your browser & click the laravel logo & the password will be revealed :)
 
 
-#### Setting up Database
-* Open MySQLWorkbench.
-* Log into Database with the following credentials
-	* Name: top_secret
-	* Host: 127.0.0.1 
-	* Username: agent
-	* Password: secret 
-	* Port: 33060
-* Manually create a database named: top_secret
+
+
+
