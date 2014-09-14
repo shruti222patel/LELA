@@ -11,7 +11,14 @@
 |
 */
 
+Route::get('/password', function()
+{
+	return View::make('password');
+});
+
 Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+

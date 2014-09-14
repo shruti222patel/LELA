@@ -3,16 +3,57 @@ LELA
 
 MISSION LELA (Learn Laravel)
 
-* Install Virtual Box
-* Install Vagrant
-* If you have a Mac
-	* Install homebrew (if you are using a Mac) & if it is already installed on your computer, update it
-		* `ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"`
-	* Install mcrypt using brew
-		* `brew install php53-mcrypt`
-	* Install composer
-* If you have a PC
-	* Install composer
-* Clone the repository by going into the terminal (or PC equivalent) & `git clone https://github.com/shruti222patel/LELA.git` 
-* go into the root directory & execute the start.sh file: `sh start.sh`
-* type 'mission.lela.mil' into your browser & the password will be revealed
+
+Key Terms:
+ 	
+ 	- Home Directory = top level folder for the user (E.g. My home directory is 'shrutipatel')
+ 	- Root Directory = top level folder (in this case it will refer to 'LELA')
+ 	- highlited text = needs to be executed in the terminal or PC equivalent
+
+
+* Install [Virtual Box](https://www.virtualbox.org/)
+
+* Install [Vagrant](http://www.vagrantup.com/)
+
+* Install Vagrant Plugin - Hostupdater
+	* `vagrant plugin install vagrant-hostsupdater`
+
+* Install [MySQL Workbench](http://dev.mysql.com/downloads/workbench/)
+
+
+	
+* Install Composer & php55
+	* If you have a Mac
+		* `brew update`
+		* `brew tap homebrew/homebrew-php`
+		* `brew tap homebrew/dupes`
+		* `brew tap homebrew/versions`
+		* `brew install php55`
+		* `brew install homebrew/php/composer`
+		
+	* If you have a PC
+		* Follow [these](https://getcomposer.org/doc/00-intro.md#using-the-installer) directions to download the file
+
+* Clone the repository by going into the terminal (or PC equivalent) & `git clone https://github.com/shruti222patel/LELA.git`
+ 
+* Go into the root directory (`cd LELA`) & execute the start.sh file (`sh start.sh`)
+
+* Type 'mission.lela.mil' into your browser & the password will be revealed :)
+
+(:if false:)
+here is some
+text
+(:searchbox:)
+with other directives
+(:ifend:)
+
+
+#### Setting up Database
+* Open MySQLWorkbench.
+* Log into Database with the following credentials
+	* Name: top_secret
+	* Host: 127.0.0.1 
+	* Username: agent
+	* Password: secret 
+	* Port: 33060
+* Manually create a database named: top_secret
