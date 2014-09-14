@@ -11,6 +11,8 @@ MISSION LELA (Learn Laravel)
 	* Install mcrypt using brew
 		* `brew install php53-mcrypt`
 	* Install composer
-	* Clone the repository by going into the terminal (or PC equivalent) & `git clone https://github.com/shruti222patel/LELA.git` 
+* If you have a PC
+	* Install composer
+* Clone the repository by going into the terminal (or PC equivalent) & `git clone https://github.com/shruti222patel/LELA.git` 
 * go into the root directory & execute the start.sh file: `sh start.sh`
 * type 'mission.lela.mil' into your browser & the password will be revealed
