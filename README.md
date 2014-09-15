@@ -17,6 +17,8 @@ Key Terms:
 
 * Install Vagrant Plugin - Hostupdater
 	* `vagrant plugin install vagrant-hostsupdater`
+* Install Vagrant laravel/homestead Box
+	* `vagrant box add laravel/homestead`
 
 * Install [MySQL Pro](http://www.sequelpro.com/) or [MySQL Workbench](http://dev.mysql.com/downloads/workbench/)
 	
