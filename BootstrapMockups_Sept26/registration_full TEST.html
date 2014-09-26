@@ -1,0 +1,614 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+     
+
+      <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+     
+      <!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- jQuery easing plugin -->
+<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+
+
+<style>
+/*form styles*/
+#msform {
+  width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+}
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  padding: 20px 30px;
+  
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 10%;
+  
+  /*stacking fieldsets above each other*/
+  position: absolute;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  color: #2C3E50;
+  font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+  width: 100px;
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*headings*/
+.fs-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+#progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 23%;
+  float: left;
+  position: relative;
+}
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: white;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+  background: #27AE60;
+  color: white;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<!-- multistep form -->
+<form id="msform">
+
+  <ul id="progressbar">
+    <li class="active">Personal Details</li>
+    <li>Locations</li>
+    <li>Security Questions</li>
+    <li>Terms of Use</li>
+  </ul>
+  <!-- 1 -->
+  <fieldset class="reg_consumer reg_vendor" id="reg_basic">
+    <h2 class="fs-title">Create your account</h2>
+    <h3 class="fs-subtitle">This is step 1</h3>
+
+                  <div class="form-group">
+                    <label>Tipo de Conta <a href="#" data-toggle="tooltip" title="tooltip placeholder"><i class="fa fa-question-circle"></i></a></label>
+                      <div style="width: 50%;" class="btn-group btn-group-justified">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default" id="reg_consumer">Pessoal</button></div>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default" id="reg_vendor">Comerciante</button></div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">    
+                    <label for="establishment-name-input">Nome de Estabelecimento</label>
+                    <input type="text" class="form-control" id="establishment-name-input">
+                  </div>
+
+                   <div class="form-group">  
+                    <label for="establishment-owner-input">Nome do Responsavel peolo Estabelecimento.</label>
+                    <input type="text" class="form-control" id="establishment-owner-input">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email-Input">Email address</label>
+                    <input type="email" class="form-control" id="email-input" placeholder="aaaa@gmail.com">
+                  </div>  
+
+                  <div class="form-group">
+                    <label>Add Lang::get(...)</label>
+                    <label style="color: black;">Exemplo: abr15P@ss ou Usuario100%</label>
+                    <label class="sr-only">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Senha">    
+                  </div>
+
+                  <div class="form-group">
+                    <label class="sr-only">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirm-password" placeholder="Confirmar Senha">
+                  </div>
+                  
+                  <div class="alert alert-danger form-group error-message hidden" role="alert" id="error-message-alert">All error messages are displayed here.</div>
+
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+
+<!--  -->
+  <fieldset class="reg_consumer" id="reg_location">
+    <h2 class="fs-title">Social Profiles</h2>
+    <h3 class="fs-subtitle">Your presence on the social network</h3>
+
+    <div class="form-group">
+                    <label><span style="color:black;"><strong>ATENCAO:</strong></span> Esta informacao e importante para identificar seu estabelecimento em nosso mapa.</label>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Estado:</label>
+                        <select class="form-control" id="state-dropdown">
+                          <option>AC</option>
+                          <option>AL</option>
+                          <option>AP</option>
+                          <option>AM</option>
+                          <option>BA</option>
+                          <option>CE</option>
+                          <option>GO</option>
+                          <option>ES</option>
+                          <option>MA</option>
+                          <option>MT</option>
+                          <option>MS</option>
+                          <option>MG</option>
+                          <option>PA</option>
+                          <option>PB</option>
+                          <option>PR</option>
+                          <option>PE</option>
+                          <option>PI</option>
+                          <option>RJ</option>
+                          <option>RN</option>
+                          <option>RS</option>
+                          <option>RO</option>
+                          <option>RR</option>
+                          <option>SP</option>
+                          <option>SC</option>
+                          <option>SE</option>
+                          <option>TO</option>
+                          <option>DF</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Cidade:</label>
+                        <select class="form-control" id="city-dropdown">
+                          <option>Need to be Added--Waiting for Kayte</option>
+                        </select>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="cep-input">CEP:</label>
+                        <input type="text" class="form-control" id="cep-input" placeholder="#####-###">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="neighborhood-input">Bairro:</label>
+                        <input type="text" class="form-control" id="neighborhood-input">
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="address-Input">Endereco:</label>
+                    <input type="text" class="form-control" id="address-input">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="numero-input">Numero:</label>
+                        <input type="number" class="form-control" id="numero-input">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="complement-input">Complemento (opcional):</label>
+                        <input type="text" class="form-control" id="complement-input">
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="cellphone-input">Celular:</label>
+                        <input type="text" class="form-control" id="cellphone-input" placeholder="(##) # ####-####">
+                      </div>
+                    </div>    
+                  </div>  
+                  <div class="alert alert-danger form-group error-message hidden" role="alert" id="error-message-alert">All error messages are displayed here.</div>
+
+
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+
+<!--  -->
+  <fieldset class="reg_vendor"id="reg_shop">
+    <h2 class="fs-title">Social Profiles</h2>
+    <h3 class="fs-subtitle">Your presence on the social network</h3>
+
+     <div class="form-group">
+                    <label>Voce gostaria de configurar outros estabelecimentos?</label>
+                    <div class="input-group">
+                      <label class="radio-inline">
+                      <input type="radio" name="facility-choice-input" value="yes">Sim</label>  
+                      <label class="radio-inline">  
+                      <input type="radio" name="facility-choice-input" value="no">Nao</label>  
+                    </div>    
+                  </div>
+                  <div class="form-group">
+                    <label>Quantos mais voce deseja confirgurar?</label>
+                    <div class="input-group">
+                      <label class="radio-inline">
+                      <input type="radio" name="additional-facility-input" value="1">1</label>  
+                      <label class="radio-inline">  
+                      <input type="radio" name="additional-facility-input" value="2">2</label>
+                      <label class="radio-inline">  
+                      <input type="radio" name="additional-facility-input" value="3">3</label>  
+                      <label class="radio-inline">  
+                      <input type="radio" name="additional-facility-input" value="more">mais</label>    
+                    </div>    
+                  </div>
+                  <div class="form-group">
+                    <label for="establishment-prefecture-input">Nomo do Novo Estabelecimento:</label>
+                    <input type="text" class="form-control" id="establishment-prefecture-input">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Estado:</label>
+                        <select class="form-control" id="state-dropdown">
+                          <option>AC</option>
+                          <option>AL</option>
+                          <option>AP</option>
+                          <option>AM</option>
+                          <option>BA</option>
+                          <option>CE</option>
+                          <option>GO</option>
+                          <option>ES</option>
+                          <option>MA</option>
+                          <option>MT</option>
+                          <option>MS</option>
+                          <option>MG</option>
+                          <option>PA</option>
+                          <option>PB</option>
+                          <option>PR</option>
+                          <option>PE</option>
+                          <option>PI</option>
+                          <option>RJ</option>
+                          <option>RN</option>
+                          <option>RS</option>
+                          <option>RO</option>
+                          <option>RR</option>
+                          <option>SP</option>
+                          <option>SC</option>
+                          <option>SE</option>
+                          <option>TO</option>
+                          <option>DF</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Cidade:</label>
+                        <select class="form-control" id="city-dropdown">
+                          <option>Need to be Added--Waiting for Kayte</option>
+                        </select>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="cep-input">CEP:</label>
+                        <input type="text" class="form-control" id="cep-input" placeholder="#####-###">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="neighborhood-input">Bairro:</label>
+                        <input type="text" class="form-control" id="neighborhood-input">
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="address-Input">Endereco:</label>
+                    <input type="text" class="form-control" id="address-input">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="numero-input">Numero:</label>
+                        <input type="number" class="form-control" id="numero-input">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="complement-input">Complemento (opcional):</label>
+                        <input type="text" class="form-control" id="complement-input">
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="cellphone-Input">Celular:</label>
+                        <input type="text" class="form-control" id="cellphone-input" placeholder="(##) # ####-####">
+                      </div>
+                    </div>    
+                  </div> 
+                <!-- Shruti: ADD another store functionality below in js-->
+                  <input type="button" name="add_shop" class="action-button" id="reg_add_shop" value="Add Another Shop" />
+                
+                  <div class="alert alert-danger form-group hidden" role="alert" id="error-message-alert">All error messages are displayed here.</div>
+
+
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+
+<!-- 1 -->
+  <fieldset class="reg_consumer reg_vendor" id="reg_security">
+    <h2 class="fs-title">Create your account</h2>
+    <h3 class="fs-subtitle">This is step 1</h3>
+
+    <div class="form-group">
+                    <label>Verificacao de CNPJ: Usamos o este CNPJ para verificar seu estabelecimento. E uma regulamentacao federal exigir que as empresas de pagamentros online coletem informacoes de seus usuarios para verifica sua identidade.</label>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="cpf-input">
+                          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        </div>  
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="form-group">
+                  <label><span style="color:black;"><strong>Pin personalizado:</strong></span> O PIN e muito importante em cada transacao. Voce tera que digitar seu PIN toda vez que voce fizer um pagamento, deposito ou retirar dinherio no PraPagar.</label>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label class="sr-only" for="pin-input">PIN:</label>
+                        <input type="text" class="form-control" id="pin-input" maxlength="4" placeholder="Escolha seu PIN de 4 digitos">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="sr-only" for="pin-confirm-input">Confirm Pin:</label>
+                        <input type="text" class="form-control" id="pin-confirm-input" maxlength="4" placeholder="Digite seu PIN de 4 digitos novamente">
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="form-group">
+                    <label for="security-question-one-input">Pergunta de Seguranca 1:</label>
+                    <input type="text" class="form-control" id="security-question-one-input">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="response-one-input">Resposda 1:</label>
+                        <input type="text" class="form-control" id="reason-one-input">
+                      </div>
+                    </div>      
+                  </div>
+                  <div class="form-group">
+                    <label for="security-question-two-input">Pergunta de Seguranca 2:</label>
+                    <input type="text" class="form-control" id="security-question-two-input">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="response-two-input">Resposda 2:</label>
+                        <input type="text" class="form-control" id="reason-two-input">
+                      </div>
+                    </div>      
+                  </div>  
+                  <div class="alert alert-danger form-group hidden" role="alert" id="error-message-alert">All error messages are displayed here.</div>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />           
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+
+<!--  -->
+  <fieldset class="reg_consumer reg_vendor" id="reg_terms">
+    <h2 class="fs-title">Personal Details</h2>
+    <h3 class="fs-subtitle">We will never sell it</h3>
+
+    <div class="form-group">
+                    <label for="terms-of-use">Termps de Uso:</label>
+                    <textarea readOnly style="width: 100%; height: 300px">Placeholder terms</textarea>  
+                    <div class="checkbox">
+                      <label><input type="checkbox" value="">Eu concordo com os termos de uso do PraPagar</label>
+                    </div>
+                  </div>
+                 
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                      <div class="alert alert-danger form-group hidden" role="alert" id="error-message-alert">All error messages are displayed here.</div>
+                    </div>
+
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>
+</form>
+
+
+
+<!-- jQuery -->
+
+<!-- jQuery easing plugin -->    
+    
+     
+     
+
+
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script>
+
+//IMP: Shruti--fix the progressbar babe (..eventually)
+
+//jQuery time
+var current_fs, next_fs, previous_fs; //fieldsets
+var left, opacity, scale; //fieldset properties which we will animate
+var animating; //flag to prevent quick multi-click glitches
+var user_type; //is the user a vendor or consumer
+var progress;   //progress value
+
+$("#reg_consumer").click(function(){
+  user_type = ".reg_consumer";
+  console.log("User type is consumer");
+});
+
+$("#reg_vendor").click(function(){
+  user_type = ".reg_vendor";
+  console.log("User type is vendor");
+});
+
+$('#reg_add_shop').click(function(){
+  //duplicate add_shop fieldset & insert it after reg_shop
+  $("#reg_shop").clone().insertAfter($('#reg_shop'));
+  // IMP: make sure this works for >2 shops as then the question becomes 
+  // where exactly is the clone being inserted as many of them will have the id reg_shop
+  // Should I change it to class?
+});
+
+$(".next").click(function(){
+  if(animating) return false;
+  animating = true;
+  
+  current_fs = $(this).parent();
+  next_pbar = $(this).parent().next();  //for progressbar
+  next_fs = $(this).parent().nextAll(user_type).first();
+  console.log(next_fs);
+
+  //activate next step on progressbar using the index of next_fs
+  $("#progressbar li").eq($("fieldset").index(next_pbar)).addClass("active");
+  
+  //show the next fieldset
+
+  next_fs.show(); 
+  //hide the current fieldset with style
+  current_fs.animate({opacity: 0}, {
+    step: function(now, mx) {
+      //as the opacity of current_fs reduces to 0 - stored in "now"
+      //1. scale current_fs down to 80%
+      scale = 1 - (1 - now) * 0.2;
+      //2. bring next_fs from the right(50%)
+      left = (now * 50)+"%";
+      //3. increase opacity of next_fs to 1 as it moves in
+      opacity = 1 - now;
+      current_fs.css({'transform': 'scale('+scale+')'});
+      next_fs.css({'left': left, 'opacity': opacity});
+    }, 
+    duration: 800, 
+    complete: function(){
+      current_fs.hide();
+      animating = false;
+    }, 
+    //this comes from the custom easing plugin
+    easing: 'easeInOutBack'
+  });
+});
+
+$(".previous").click(function(){
+  if(animating) return false;
+  animating = true;
+  
+  
+  current_fs = $(this).parent();
+  previous_fs = $(this).parent().prevAll(user_type).first();
+  console.log(previous_fs);
+  
+  //de-activate current step on progressbar
+  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+  
+  //show the previous fieldset
+  previous_fs.show(); 
+  //hide the current fieldset with style
+  current_fs.animate({opacity: 0}, {
+    step: function(now, mx) {
+      //as the opacity of current_fs reduces to 0 - stored in "now"
+      //1. scale previous_fs from 80% to 100%
+      scale = 0.8 + (1 - now) * 0.2;
+      //2. take current_fs to the right(50%) - from 0%
+      left = ((1-now) * 50)+"%";
+      //3. increase opacity of previous_fs to 1 as it moves in
+      opacity = 1 - now;
+      current_fs.css({'left': left});
+      previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+    }, 
+    duration: 800, 
+    complete: function(){
+      current_fs.hide();
+      animating = false;
+    }, 
+    //this comes from the custom easing plugin
+    easing: 'easeInOutBack'
+  });
+});
+
+$(".submit").click(function(){
+  return false;
+});
+
+      </script>
+    </body>
+  </html>

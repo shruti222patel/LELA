@@ -1,0 +1,96 @@
+
+body { min-height: 2000px; padding-top: 70px; }
+
+/*	Forms */
+label { font-weight: 300; color: #4F4F4D }
+a { color: #4F4F4D; }
+.form-button { font-weight: 300; width: 100%; font-size: 22px; }
+.form-title { text-align:center; font-size: 24px; color: black; 
+}
+/* Page Header */
+.large-header-text { font-weight: 300;  color: darkblue; padding-top: 10px; padding-left: 10px; }
+.medium-header-text { font-weight: 300;  color: white; padding-bottom: 10px; padding-left: 10px; }
+
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .fa  { left:  0px;}
+.right-addon .fa { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+/* orange font colors */
+.orange-font{
+	color: #E27F00;
+}
+.orange-faded-font{
+	color: #F9C396;
+}
+
+/* grey font colors */
+.light-grey-font{
+	color: #B2B2B2;
+}
+.dark-grey-font{
+	color: #858585;
+}
+
+/* blue text */
+.blue-font{
+	color: darkblue;
+}
+
+/* grey background colors*/
+.light-grey-background{
+	background-color: #D9D9D9;
+}
+
+
+
+/* Set up Tables */
+table{
+	border-color: #CCCCCC;
+}
+
+table th{
+	color: #858585;
+	background-color: #F2F2F2;
+}
+
+.transfers-table td{
+	color: #B2B2B2;	
+}
+
+/* text-area */
+.text-area{
+	height: 175px;
+	width: 100%;
+	border-radius: 20px;
+}
+/*-------
+Dashboard
+---------*/
+.dashboard-label { font-size: 20px; }
+
+.dashboard-label-blue { color: darkblue; font-size: 20px; }
+
+@media(min-width:768px) {
+  .dashboard-side-nav { position: fixed; }  
+}
+
+@media(min-width:1700px) {
+  .dashboard-side-nav-list { width: 75%; }
+}

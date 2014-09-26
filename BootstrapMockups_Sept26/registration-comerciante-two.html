@@ -1,0 +1,157 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Bootstrap -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+      <!-- This will be made into a partial as it appears on multiple pages. -->
+      <div class="" style="background-color: #f0ad4e;">
+        <h2 class="large-header-text">Bem-vindo ao PraPagar, o jeito mais facil, rapido e seguro de fazer pagementos.</p>
+        <h3 class="medium-header-text">&gt&gt Termine seu cadastro em quatro etapas!</h3>
+      </div> 
+
+      <div class="container">  
+        <div class="row">   
+          <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <div class="well well-lg">
+                <form class="form-horizontal" role="form" id="registration-form-one" style="padding-left: 30px; padding-right: 30px">
+                  <div class="form-group">
+                    <label><span style="color:black;"><strong>ATENCAO:</strong></span> Esta informacao e importante para identificar seu estabelecimento em nosso mapa.</label>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Estado:</label>
+                        <select class="form-control" id="state-dropdown">
+                          <option>AC</option>
+                          <option>AL</option>
+                          <option>AP</option>
+                          <option>AM</option>
+                          <option>BA</option>
+                          <option>CE</option>
+                          <option>GO</option>
+                          <option>ES</option>
+                          <option>MA</option>
+                          <option>MT</option>
+                          <option>MS</option>
+                          <option>MG</option>
+                          <option>PA</option>
+                          <option>PB</option>
+                          <option>PR</option>
+                          <option>PE</option>
+                          <option>PI</option>
+                          <option>RJ</option>
+                          <option>RN</option>
+                          <option>RS</option>
+                          <option>RO</option>
+                          <option>RR</option>
+                          <option>SP</option>
+                          <option>SC</option>
+                          <option>SE</option>
+                          <option>TO</option>
+                          <option>DF</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Cidade:</label>
+                        <select class="form-control" id="city-dropdown">
+                          <option>AC</option>
+                          <option>AL</option>
+                          <option>AP</option>
+                          <option>AM</option>
+                          <option>BA</option>
+                          <option>CE</option>
+                          <option>GO</option>
+                          <option>ES</option>
+                          <option>MA</option>
+                          <option>MT</option>
+                          <option>MS</option>
+                          <option>MG</option>
+                          <option>PA</option>
+                          <option>PB</option>
+                          <option>PR</option>
+                          <option>PE</option>
+                          <option>PI</option>
+                          <option>RJ</option>
+                          <option>RN</option>
+                          <option>RS</option>
+                          <option>RO</option>
+                          <option>RR</option>
+                          <option>SP</option>
+                          <option>SC</option>
+                          <option>SE</option>
+                          <option>TO</option>
+                          <option>DF</option>
+                        </select>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="cep-input">CEP:</label>
+                        <input type="text" class="form-control" id="cep-input" placeholder="#####-###">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="neighborhood-input">Bairro:</label>
+                        <input type="text" class="form-control" id="neighborhood-input">
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="address-Input">Endereco:</label>
+                    <input type="text" class="form-control" id="address-input">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="numero-input">Numero:</label>
+                        <input type="number" class="form-control" id="numero-input">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="complement-input">Complemento (opcional):</label>
+                        <input type="text" class="form-control" id="complement-input">
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="cellphone-input">Celular:</label>
+                        <input type="text" class="form-control" id="cellphone-input" placeholder="(##) # ####-####">
+                      </div>
+                    </div>    
+                  </div>  
+                  <div class="alert alert-danger form-group error-message hidden" role="alert" id="error-message-alert">All error messages are displayed here.</div>
+                  <div class="form-group">
+                      <button type="button" class="btn btn-warning form-button">Continuar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div class="col-md-4"></div>
+      </div>          
+    
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+    </body>
+  </html>
